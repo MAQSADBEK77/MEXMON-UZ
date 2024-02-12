@@ -1,0 +1,74 @@
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500;600;800;900&display=swap);
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.container-print {
+  margin: 0 15px;
+}
+.border-css1,
+.border-css2,
+.border-css3,
+.border-css4,
+.border-css-full {
+  border: 0.01px dotted rgb(114, 113, 113);
+  outline: 0.01px dotted rgb(114, 113, 113);
+  display: flex;
+  align-items: center;
+  padding-left: 4px;
+}
+.border-css1 {
+  width: 114px;
+}
+.border-css2 {
+  width: 220px;
+}
+.border-css3 {
+  width: 50px;
+}
+.border-css4 {
+  width: 166px;
+}
+.border-css3 span,
+.border-css4 span {
+  font-weight: bolder !important;
+}
+.border-css-full {
+  width: 338px;
+}
+p {
+  font-weight: 500;
+  font-size: 9px;
+  text-transform: uppercase;
+  line-height: 12.2px;
+}
+.text-unset {
+  text-transform: unset;
+}
+.border-css-full .text-unset {
+  letter-spacing: 0.3px;
+}
+.p-left {
+  font-size: 10px;
+}
+span {
+  font-weight: 700;
+  font-size: 7.5px;
+  letter-spacing: -0.2px;
+}
+.top-data span {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.bold {
+  font-size: 9.1px;
+}
+.mexmonxona {
+  text-transform: uppercase;
+}
