@@ -187,7 +187,7 @@ function Home() {
               type="text"
               placeholder="AA00000000"
               className="input input-bordered input-info w-60"
-              onChange={(e) => setPassportSeriya(e)}
+              onChange={(e) => setPassportSeriya(e.target.value)}
               value={passportSeriya}
             />{" "}
           </label>
@@ -233,7 +233,6 @@ function Home() {
               <option value="Женский">Ayol</option>
             </select>
           </label>
-
           <label className="flex flex-col gap-1">
             <span className="text-xs">Паспорт дата/Выдан</span>
             <input
@@ -594,7 +593,9 @@ function Home() {
                 <p className="p-left">6. Документ:</p>
               </div>
               <div className="border-css2">
-                <span>{passportSeriya}</span>
+                <span>
+                  ПАСПОРТЖ {passportSeriya}; ВИДАН: {PassportBerilganSana}
+                </span>
               </div>
             </div>
             <div className="flex gap-1">
