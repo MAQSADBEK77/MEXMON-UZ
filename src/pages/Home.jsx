@@ -36,7 +36,7 @@ function Home() {
   const [KPPSana, setKPPSana] = useState("№AIR ; Дата: 15-02-2024");
   const [inputDate, setInputDate] = useState("");
   const [Viza, setViza] = useState(
-    `ТИП: S-2 №4056473ж ${HozirgiKun < 10 ? "0" : ""}${HozirgiKun}.${
+    `ТИП: №4056473; ${HozirgiKun < 10 ? "0" : ""}${HozirgiKun}.${
       HozirgiOy < 10 ? "0" : ""
     }${HozirgiOy}.${HozirgiYil}`
   );
