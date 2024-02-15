@@ -33,7 +33,6 @@ function Home() {
   const [KelganDavlat, setKelganDavlat] = useState("Кыргызская Республика");
   const [jinsi, setJinsi] = useState("Мужской");
   const [PassportBerilganSana, setPasportBerilganSana] = useState("");
-  const [KPPSana, setKPPSana] = useState("№AIR ; Дата: 15-02-2024");
   const [inputDate, setInputDate] = useState("");
   const [Viza, setViza] = useState(
     `ТИП: №4056473; ${HozirgiKun < 10 ? "0" : ""}${HozirgiKun}.${
@@ -72,7 +71,6 @@ function Home() {
       jinsi,
       PassportBerilganSana,
       Viza,
-      KPPSana,
       KOM_RAQAMI: "112",
       NO: Math.floor(Math.random() * (32 - 30 + 1)) + 30,
     },
@@ -276,17 +274,6 @@ function Home() {
               className="input input-bordered input-info w-60"
               onChange={(e) => setViza(e.target.value)}
               value={Viza}
-            />{" "}
-          </label>
-          <label className="flex flex-col gap-1">
-            <span className="text-xs">КПП и дата</span>
-            <input
-              required
-              type="text"
-              placeholder="КПП и дата"
-              className="input input-bordered input-info w-60"
-              onChange={(e) => setKPPSana(e.target.value)}
-              value={KPPSana}
             />{" "}
           </label>{" "}
         </form>
