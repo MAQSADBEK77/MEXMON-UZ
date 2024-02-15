@@ -8,6 +8,8 @@ function Home() {
   const generateQRCODE2 =
     Math.floor(Math.random() * (MAXIMUM - MINIMUM + 1)) + MINIMUM;
   const generate24 = Math.floor(Math.random() * 2400);
+  const KPPrandom =
+    Math.floor(Math.random() * (9999999 - 1101090 + 1)) + 1101090;
   // GENERATE CODE
   // TIME CODE
   const HozirgiVaqt = new Date();
@@ -35,7 +37,7 @@ function Home() {
   const [PassportBerilganSana, setPasportBerilganSana] = useState("");
   const [inputDate, setInputDate] = useState("");
   const [Viza, setViza] = useState(
-    `ТИП: №4056473; ${HozirgiKun < 10 ? "0" : ""}${HozirgiKun}.${
+    `ТИП: №${KPPrandom}; ${HozirgiKun < 10 ? "0" : ""}${HozirgiKun}.${
       HozirgiOy < 10 ? "0" : ""
     }${HozirgiOy}.${HozirgiYil}`
   );
@@ -72,6 +74,7 @@ function Home() {
       PassportBerilganSana,
       Viza,
       KOM_RAQAMI: "112",
+      KPPrandom,
       NO: Math.floor(Math.random() * (32 - 30 + 1)) + 30,
     },
   ];
