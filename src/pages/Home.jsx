@@ -1,8 +1,30 @@
 import { useState } from "react";
 import { useFetch } from "../hooks/useFetch";
 function Home() {
+  // GENERATE CODE
+  const MINIMUM = 3574;
+  const MAXIMUM = 3600;
+  const generateQRCODE1 = Math.floor(Math.random() * (99 - 10 + 1)) + 10;
+  const generateQRCODE2 =
+    Math.floor(Math.random() * (MAXIMUM - MINIMUM + 1)) + MINIMUM;
+  const generate24 = Math.floor(Math.random() * 2400);
+  // GENERATE CODE
+  // TIME CODE
+  const HozirgiVaqt = new Date();
+  HozirgiVaqt.setMinutes(-generate24);
+  const HozirgiYil = HozirgiVaqt.getFullYear();
+  const HozirgiOy = HozirgiVaqt.getMonth() + 1;
+  const HozirgiKun = HozirgiVaqt.getDate();
+  const HozirgiSoat = HozirgiVaqt.getHours();
+  const HozirgiDaqiqa = HozirgiVaqt.getMinutes();
+  // TIME CODE
   const [mode, setMode] = useState(false);
   const [mehmonxona, setMehmonxona] = useState("1");
+  const [COMnumber, setCOMnumber] = useState(
+    generateQRCODE1 >= 50
+      ? Math.floor(Math.random() * (110 - 101 + 1)) + 101
+      : Math.floor(Math.random() * (210 - 201 + 1)) + 201
+  );
   const [familiya, setFamiliya] = useState("");
   const [ism, setIsm] = useState("");
   const [otasiIsmi, setOtasiIsmi] = useState("");
@@ -10,26 +32,15 @@ function Home() {
   const [TugilganSana, setTugilganSana] = useState("");
   const [KelganDavlat, setKelganDavlat] = useState("Кыргызская Республика");
   const [jinsi, setJinsi] = useState("Мужской");
-  const [Vizit, setVizit] = useState("");
   const [PassportBerilganSana, setPasportBerilganSana] = useState("");
-  const [Viza, setViza] = useState("(Выдано: не указано) Срок визы:");
   const [KPPSana, setKPPSana] = useState("№AIR ; Дата: 15-02-2024");
   const [inputDate, setInputDate] = useState("");
-  const HozirgiVaqt = new Date();
-  const HozirgiYil = HozirgiVaqt.getFullYear();
-  const HozirgiOy = HozirgiVaqt.getMonth();
-  const HozirgiKun = HozirgiVaqt.getDate();
-  const HozirgiSoat = HozirgiVaqt.getHours();
-  const HozirgiDaqiqa = HozirgiVaqt.getMinutes();
-  const generate24 = Math.floor(Math.random() * 30);
-  console.log(generate24);
-  console.log(
-    `${HozirgiYil}.${HozirgiOy <= 10 ? "0" : ""}${HozirgiOy}.${
-      HozirgiKun <= 10 ? "0" : ""
-    }${HozirgiKun} ${HozirgiSoat <= 10 ? "0" : ""}${HozirgiSoat + generate24}:${
-      HozirgiDaqiqa <= 10 ? "0" : ""
-    }${HozirgiDaqiqa}`
+  const [Viza, setViza] = useState(
+    `ТИП: S-2 №4056473ж ${HozirgiKun < 10 ? "0" : ""}${HozirgiKun}.${
+      HozirgiOy < 10 ? "0" : ""
+    }${HozirgiOy}.${HozirgiYil}`
   );
+
   const handleChange = (e) => {
     setInputDate(e.target.value);
     const parts = e.target.value.split("-");
@@ -43,25 +54,27 @@ function Home() {
   const data = [
     {
       mehmonxona,
+      COMnumber,
       ism,
       familiya,
       otasiIsmi,
       passportSeriya,
       TugilganSana,
       KelganDavlat,
-      Kun: `${HozirgiKun <= 10 ? "0" : ""}${HozirgiKun}.${
-        HozirgiOy <= 10 ? "0" : ""
+      Kun: `${HozirgiKun < 10 ? "0" : ""}${HozirgiKun}.${
+        HozirgiOy < 10 ? "0" : ""
       }${HozirgiOy}.${HozirgiYil}`,
-      YetibKeldi: `${HozirgiKun <= 10 ? "0" : ""}${HozirgiKun}.${
-        HozirgiOy <= 10 ? "0" : ""
+      YetibKeldi: `${HozirgiKun < 10 ? "0" : ""}${HozirgiKun}.${
+        HozirgiOy < 10 ? "0" : ""
       }${HozirgiOy}.${HozirgiYil} ${
-        HozirgiSoat <= 10 ? "0" : ""
+        HozirgiSoat < 10 ? "0" : ""
       }${HozirgiSoat}:${HozirgiDaqiqa <= 10 ? "0" : ""}${HozirgiDaqiqa}`,
       jinsi,
-      Vizit,
       PassportBerilganSana,
       Viza,
       KPPSana,
+      KOM_RAQAMI: "112",
+      NO: Math.floor(Math.random() * (32 - 30 + 1)) + 30,
     },
   ];
   function SendData(e) {
@@ -146,6 +159,17 @@ function Home() {
               <option value="59">Эко Дом</option>
               <option value="60">HOTEL ROMA</option>
             </select>
+          </label>
+          <label className="flex flex-col gap-1">
+            <span className="text-xs">№ ком</span>
+            <input
+              required
+              type="text"
+              placeholder="№ ком"
+              className="input input-bordered input-info w-60"
+              onChange={(e) => setCOMnumber(e.target.value)}
+              value={COMnumber}
+            />{" "}
           </label>
           <label className="flex flex-col gap-1">
             <span className="text-xs">Фамилия</span>
@@ -536,7 +560,8 @@ function Home() {
                     </span>
                   </span>
                   <span>
-                    <span className="bold">№ ком:</span>203
+                    <span className="bold">№ ком:</span>
+                    {COMnumber}
                   </span>
                 </div>
                 <div className="flex-flex-col ml-[150px]">
@@ -544,7 +569,9 @@ function Home() {
                     className="m-auto"
                     src="https://api.qrserver.com/v1/create-qr-code/?data=https://emehmon.uz/identify-origin/hotel/4C531338F77CF020750C331852EC8B2D97D335F1&size=40x40"
                   />
-                  <span className="bold">61-3574-2024</span>
+                  <span className="bold">
+                    {generateQRCODE1}-{generateQRCODE2}-2024
+                  </span>
                 </div>
               </div>
             </div>
@@ -594,7 +621,7 @@ function Home() {
               </div>
               <div className="border-css2">
                 <span>
-                  ПАСПОРТЖ {passportSeriya}; ВИДАН: {PassportBerilganSana}
+                  ПАСПОРТ: {passportSeriya}; ВИДАН: {PassportBerilganSana}
                 </span>
               </div>
             </div>
@@ -619,7 +646,9 @@ function Home() {
                 <p className="p-left">9. КПП:</p>
               </div>
               <div className="border-css2">
-                <span className="text-unset">№31, ДАТА: {data[0].Kun}</span>
+                <span className="text-unset">
+                  №{data[0].NO}, ДАТА: {data[0].Kun}
+                </span>
               </div>
             </div>{" "}
             <div className="border-css-full">
