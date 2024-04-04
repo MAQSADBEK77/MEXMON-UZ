@@ -8,8 +8,18 @@ body {
   margin: 0 auto;
   padding: 0 20px;
 }
+.container2 {
+  width: 1000px;
+  height: 1170px;
+  background: url(./images/background.png);
+  background-repeat: no-repeat;
+}
 .container-print {
   margin: 0 15px;
+  position: absolute;
+  top: 45px;
+  left: 180px;
+  transform: scale(110%) rotate(-90.4deg);
 }
 .border-css1,
 .border-css2,
@@ -29,7 +39,7 @@ body {
   width: 220px;
 }
 .border-css3 {
-  width: 50px;
+  width: 51.2px;
 }
 .border-css4 {
   width: 166px;
@@ -39,7 +49,11 @@ body {
   font-weight: bolder !important;
 }
 .border-css-full {
-  width: 338px;
+  width: 336.5px;
+}
+.rotate-container {
+  margin-top: 200px;
+  transform: rotate(90deg) !important;
 }
 p {
   font-weight: 500;

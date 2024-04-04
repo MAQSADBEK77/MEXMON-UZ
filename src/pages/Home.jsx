@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useFetch } from "../hooks/useFetch";
 function Home() {
   // GENERATE CODE
   const MINIMUM = 3574;
@@ -284,7 +283,8 @@ function Home() {
           Tasdiqlash
         </button>
       </div>
-      <div className="container">
+      <div
+        className={`container container2 ${setMode ? "rotate-container" : ""}`}>
         <div className="container-print mt-7 mx-auto">
           <div className="flex flex-col gap-1">
             <div className="flex gap-1">
