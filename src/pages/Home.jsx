@@ -620,7 +620,7 @@ function Home() {
                 </div>
                 <div className="border-css2">
                   <span>
-                    ПАСПОРТ: {passportSeriya}; ВИДАН: {PassportBerilganSana}
+                    ПАСПОРТ: {passportSeriya}; ВЫДАН: {PassportBerilganSana}
                   </span>
                 </div>
               </div>
