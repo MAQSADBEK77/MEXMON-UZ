@@ -11,23 +11,33 @@ body {
 .container2 {
   width: 1000px;
   height: 1170px;
-  background: url(./images/background.png);
+  background: url(./images/background1.png);
   background-repeat: no-repeat;
+}
+.text-bg-father {
+  background: url(./images/TextBackground.png);
+  background-repeat: no-repeat;
+  transform: scale(80%);
+  background-size: cover;
+  width: 380px;
+  height: 520px;
+  padding-top: 30px;
+  padding-left: 25px;
 }
 .container-print {
   margin: 0 15px;
   position: absolute;
-  top: 45px;
-  left: 180px;
-  transform: scale(110%) rotate(-90.4deg);
+}
+.texts {
+  transform: rotate(-0.5deg);
 }
 .border-css1,
 .border-css2,
 .border-css3,
 .border-css4,
 .border-css-full {
-  border: 0.01px dotted rgb(114, 113, 113);
-  outline: 0.01px dotted rgb(114, 113, 113);
+  border: 0.5px dotted rgb(114, 113, 113);
+  outline: 0.5px dotted rgb(114, 113, 113);
   display: flex;
   align-items: center;
   padding-left: 4px;
@@ -39,21 +49,20 @@ body {
   width: 220px;
 }
 .border-css3 {
-  width: 51.2px;
+  width: 51.5px;
 }
 .border-css4 {
-  width: 166px;
+  width: 163px;
 }
 .border-css3 span,
 .border-css4 span {
   font-weight: bolder !important;
 }
 .border-css-full {
-  width: 336.5px;
+  width: 340px;
 }
 .rotate-container {
-  margin-top: 200px;
-  transform: rotate(90deg) !important;
+  margin-top: 20px;
 }
 p {
   font-weight: 500;
@@ -85,4 +94,7 @@ span {
 }
 .mexmonxona {
   text-transform: uppercase;
+}
+.gap-2 {
+  gap: 6px !important;
 }
