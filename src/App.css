@@ -107,3 +107,22 @@ input {
 label span {
   font-size: 12px !important;
 }
+.top-title {
+  display: flex;
+  align-items: end;
+  font-weight: 500;
+
+  font-family: "Arial", sans-serif;
+}
+.top-title span {
+  font-weight: 300;
+  font-size: 15px;
+}
+.flagTD {
+  display: flex;
+  align-items: center;
+}
+.panel-title a {
+  display: flex;
+  align-items: center;
+}

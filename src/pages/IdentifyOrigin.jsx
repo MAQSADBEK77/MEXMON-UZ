@@ -1,10 +1,10 @@
-import React from "react";
+import { FaInfoCircle } from "react-icons/fa";
 
 function IdentifyOrigin() {
   return (
     <>
       <div className="row col-md-7 col-md-offset-3">
-        <h4 style={{ fontFamily: '"Open Sans", Arial, sans-serif' }}>
+        <h4 className="top-title">
           {" "}
           <img
             src="https://emehmon.uz/sximo/images/logo-sximo.png"
@@ -26,15 +26,14 @@ function IdentifyOrigin() {
                 style={{ fontWeight: 700, color: "#0A246A" }}
                 data-toggle="collapse"
                 href="#common-info"
-                className=""
                 aria-expanded="true">
-                <i className="fa fa-info-circle" />
+                <FaInfoCircle className="fa fa-info-circle" />
                 &nbsp;Общая информация{" "}
               </a>
             </h5>
           </div>
           <div
-            className="panel-body collapsed col-md-12 collapse in"
+            className="panel-body collapse col-md-12 in"
             id="common-info"
             style={{ background: "rgb(253, 253, 253)" }}
             aria-expanded="true">
@@ -76,7 +75,7 @@ function IdentifyOrigin() {
                   <td className="label-view text-left">
                     <label>Страна рождения</label>
                   </td>
-                  <td>
+                  <td className="flagTD">
                     <img
                       src="https://emehmon.uz/uploads/flags/132.png"
                       width="40px"
@@ -89,7 +88,7 @@ function IdentifyOrigin() {
                   <td className="label-view text-left">
                     <label>Гражданство</label>
                   </td>
-                  <td>
+                  <td className="flagTD">
                     <img
                       src="https://emehmon.uz/uploads/flags/132.png"
                       width="40px"
@@ -102,7 +101,7 @@ function IdentifyOrigin() {
                   <td className="label-view text-left">
                     <label>Откуда</label>
                   </td>
-                  <td>
+                  <td className="flagTD">
                     <img
                       src="https://emehmon.uz/uploads/flags/132.png"
                       width="40px"
@@ -227,7 +226,7 @@ function IdentifyOrigin() {
                 href="#common-info2"
                 className=""
                 aria-expanded="true">
-                <i className="fa fa-info-circle" />
+                <FaInfoCircle className="fa fa-info-circle" />
                 &nbsp;Информация о турсборе{" "}
               </a>
             </h5>
@@ -307,7 +306,7 @@ function IdentifyOrigin() {
                 style={{ fontWeight: 700, color: "#0A246A" }}
                 data-toggle="collapse"
                 aria-expanded="true">
-                <i className="fa fa-info-circle" />
+                <FaInfoCircle className="fa fa-info-circle" />
                 &nbsp;Информация о детях{" "}
               </a>
             </h5>
@@ -330,7 +329,7 @@ function IdentifyOrigin() {
                 style={{ fontWeight: 700, color: "#0A246A" }}
                 data-toggle="collapse"
                 aria-expanded="true">
-                <i className="fa fa-info-circle" />
+                <FaInfoCircle className="fa fa-info-circle" />
                 &nbsp;Отзывы{" "}
               </a>
             </h5>
@@ -367,7 +366,7 @@ function IdentifyOrigin() {
                 style={{ fontWeight: 700, color: "#0A246A" }}
                 data-toggle="collapse"
                 aria-expanded="true">
-                <i className="fa fa-info-circle" />
+                <FaInfoCircle className="fa fa-info-circle" />
                 &nbsp;События{" "}
               </a>
             </h5>
