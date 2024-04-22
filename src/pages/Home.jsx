@@ -879,7 +879,7 @@ function Home() {
                   <div className="flex-flex-col ml-[150px]">
                     <img
                       className="m-auto QR-CODE"
-                      src={`https://api.qrserver.com/v1/create-qr-code/?data=https://emehmon-uz.online/identify-origin/hotel/${randomString2(
+                      src={`https://api.qrserver.com/v1/create-qr-code/?data=https://emehmon.netlify.app/identify-origin/hotel/${randomString2(
                         2
                       )}${randomNumber(2)}${randomString(34)}${randomNumber(
                         2
