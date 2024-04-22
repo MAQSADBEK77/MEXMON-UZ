@@ -5,6 +5,21 @@ function IdentifyOrigin() {
   const { dataa, loading, error } = useFetch(
     `https://mexmon-uz-server.onrender.com/data/${PAGEURL[PAGEURL.length - 1]}`
   );
+  function formatDate(inputDate) {
+    // Gelen tarihi parçalara ayır
+    var parts = inputDate.split(".");
+
+    // Yıl, ay ve gün bilgilerini al
+    var year = parts[0];
+    var month = parts[1];
+    var day = parts[2];
+
+    // Yeni tarih formatına göre dize oluştur
+    var newDate = day + "." + month + "." + year;
+
+    // Oluşturulan yeni tarihi döndür
+    return newDate;
+  }
   console.log(dataa && dataa);
   return (
     <>
@@ -18,7 +33,7 @@ function IdentifyOrigin() {
               style={{ verticalAlign: "bottom" }}
             />
           </a>
-          &nbsp;<b>ORIGIN dataa: </b>
+          &nbsp;<b>ORIGIN DATA: </b>
           <span style={{ color: "#0e76a8" }}>{dataa != null && dataa.id}</span>
         </h4>
       </div>
@@ -173,7 +188,7 @@ function IdentifyOrigin() {
                   <td width="30%" className="label-view text-left">
                     <label>Паспорт дата/Выдан: </label>
                   </td>
-                  <td>{dataa != null && dataa.PassportDate}</td>
+                  <td>{formatDate(dataa != null && dataa.PassportDate)} / </td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">

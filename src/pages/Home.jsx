@@ -4,7 +4,7 @@ function Home() {
   // GENERATE CODE
   const MINIMUM = 3574;
   const MAXIMUM = 3600;
-  const HowDays = Math.ceil(Math.random() * 10);
+  const HowDays = Math.ceil(Math.random() * 6);
   const generateQRCODE1 = Math.floor(Math.random() * (99 - 10 + 1)) + 10;
   const generateQRCODE2 =
     Math.floor(Math.random() * (MAXIMUM - MINIMUM + 1)) + MINIMUM;
@@ -21,7 +21,7 @@ function Home() {
   const HozirgiSoat = HozirgiVaqt.getHours();
   const HozirgiDaqiqa = HozirgiVaqt.getMinutes();
   // TIME CODE
-  const [mode, setMode] = useState();
+  const [mode, setMode] = useState(true);
   const [mehmonxona, setMehmonxona] = useState("1");
   const [COMnumber, setCOMnumber] = useState(
     generateQRCODE1 >= 50
@@ -37,6 +37,14 @@ function Home() {
   const [jinsi, setJinsi] = useState("Мужской");
   const [PassportBerilganSana, setPasportBerilganSana] = useState("");
   const [inputDate, setInputDate] = useState("");
+  function formatDate(inputDate) {
+    var parts = inputDate.split(".");
+    var year = parts[0];
+    var month = parts[1];
+    var day = parts[2];
+    var newDate = day + "." + month + "." + year;
+    return newDate;
+  }
   const [Viza, setViza] = useState(
     `ТИП: №${KPPrandom}; ${HozirgiKun < 10 ? "0" : ""}${HozirgiKun}.${
       HozirgiOy < 10 ? "0" : ""
@@ -129,7 +137,13 @@ function Home() {
       RoomNumber: COMnumber,
       HowDays: HowDays,
       Sex: jinsi,
-      Arrived: Viza,
+      Arrived: `${HozirgiKun < 10 ? "0" : ""}${HozirgiKun}.${
+        HozirgiOy < 10 ? "0" : ""
+      }${HozirgiOy}.${HozirgiYil} ${
+        HozirgiSoat - Math.ceil(Math.random() * 12) < 10 ? "0" : ""
+      }${HozirgiSoat}:${
+        HozirgiDaqiqa <= 10 ? "0" : ""
+      }${HozirgiDaqiqa}:${Math.ceil(Math.random() * 60)}`,
       Visit: "Трудовая деятельность",
       GuestType: "Пенсионер",
       Departed: `${HozirgiKun < 10 ? "0" : ""}${HozirgiKun}.${
@@ -138,17 +152,13 @@ function Home() {
         HozirgiSoat < 10 ? "0" : ""
       }${HozirgiSoat}:${
         HozirgiDaqiqa <= 10 ? "0" : ""
-      }${HozirgiDaqiqa}, Сутки проживания: ${HowDays}`,
-      DocumentType: passportSeriya,
+      }${HozirgiDaqiqa}:${Math.ceil(
+        Math.random() * 60
+      )}, Сутки проживания: ${HowDays}`,
+      DocumentType: `Паспорт ${passportSeriya}`,
       PassportDate: PassportBerilganSana,
-      VisaIssueBy: `E ${KPPrandom} (Выдана: не указано) Срок визы: c ${
-        HozirgiKun < 10 ? "0" : ""
-      }${HozirgiKun}.${
-        HozirgiOy < 10 ? "0" : ""
-      }${HozirgiOy}.${HozirgiYil} по ${
-        HozirgiKun + HowDays < 10 ? "0" : ""
-      }${HozirgiKun}.${HozirgiOy < 10 ? "0" : ""}${HozirgiOy}.${HozirgiYil}`,
-      CheckpointAndDate: `№AIR ; Дата: ${
+      VisaIssueBy: `(Выдана: не указано) Срок визы:`,
+      CheckpointAndDate: `№31 ; Дата: ${
         HozirgiKun < 10 ? "0" : ""
       }${HozirgiKun}.${HozirgiOy < 10 ? "0" : ""}${HozirgiOy}.${HozirgiYil}`,
       Payment: "1,00 UZS",
@@ -156,7 +166,7 @@ function Home() {
         HozirgiOy < 10 ? "0" : ""
       }${HozirgiOy}.${HozirgiYil} ${
         HozirgiSoat < 10 ? "0" : ""
-      }${HozirgiSoat}:${HozirgiDaqiqa <= 10 ? "0" : ""}${HozirgiDaqiqa}`,
+      }${HozirgiSoat}:${HozirgiDaqiqa <= 10 ? "0" : ""}${HozirgiDaqiqa + 3}`,
       Hotel:
         data[0].mehmonxona == 1
           ? "HOTEL-LYUKS"
@@ -279,124 +289,124 @@ function Home() {
           : "HOTEL ROMA",
       Admin:
         data[0].mehmonxona == 1
-          ? "VATAN RAVNAQI 31"
+          ? "SH.XOMIDOV"
           : data[0].mehmonxona == 2
-          ? "TOSHTEPA 15"
+          ? "A.ISMOILOV"
           : data[0].mehmonxona == 3
-          ? "JIYDAZOR 23"
+          ? "A.MIRTILLAYEV"
           : data[0].mehmonxona == 4
-          ? "OQIBAT 29"
+          ? "R.AMINJONOV"
           : data[0].mehmonxona == 5
-          ? "EZGULIK 12"
+          ? "T.TURSUNOVA"
           : data[0].mehmonxona == 6
-          ? "EZGULIK 1"
+          ? "A.XUDOYBERDIYEV"
           : data[0].mehmonxona == 7
-          ? "FARABI 14"
+          ? "Z.YOQUBOV"
           : data[0].mehmonxona == 8
-          ? "PESHVOZOV 11"
+          ? "I.MIRZAYEV"
           : data[0].mehmonxona == 9
-          ? "YAHSHI NIYAT 3"
+          ? "M.XAYRULLO"
           : data[0].mehmonxona == 10
-          ? "TABOBAT 27"
+          ? "X.XAYRULLO"
           : data[0].mehmonxona == 11
-          ? "FAROVON TURMUSH 11"
+          ? "E.SHERMATOV"
           : data[0].mehmonxona == 12
-          ? "OQIBAT 2"
+          ? "B.NORINOV"
           : data[0].mehmonxona == 13
-          ? "YANGI TURMUSH 3"
+          ? "I.KAZAKOV"
           : data[0].mehmonxona == 14
-          ? "FARABI 14"
+          ? "H.KAMOLOV"
           : data[0].mehmonxona == 15
-          ? "NURAFSHON 14"
+          ? "A.ABDULFATTOYEV"
           : data[0].mehmonxona == 16
-          ? "XALQOBOD 32"
+          ? "M.KOMILOVA"
           : data[0].mehmonxona == 17
-          ? "FARG`ONA 15"
+          ? "X.OLIMJONOV"
           : data[0].mehmonxona == 18
-          ? "XALQOBOD 3"
+          ? "M.MUXITDINOV"
           : data[0].mehmonxona == 19
-          ? "VODIL 13"
+          ? "O.MUSTAFAQULOV"
           : data[0].mehmonxona == 20
-          ? "SHARSHARA 5"
+          ? "S.ABDULLAYEV"
           : data[0].mehmonxona == 21
-          ? "CHARAG`ON 36"
+          ? "I.RAXMATJONOV"
           : data[0].mehmonxona == 22
-          ? "TAROVAT 25"
+          ? "D.AZIMOV"
           : data[0].mehmonxona == 23
-          ? "SARXAD 12"
+          ? "P.QODIROVA"
           : data[0].mehmonxona == 24
-          ? "YAHSHI NIYAT 9"
+          ? "M.ASQAROV"
           : data[0].mehmonxona == 25
-          ? "DO`STLIK 1"
+          ? "Z.ALIMOV"
           : data[0].mehmonxona == 26
-          ? "BAZARNAYA 64"
+          ? "S.ILXOMOV"
           : data[0].mehmonxona == 27
-          ? "GULSHAN 19"
+          ? "I.FOZILOV"
           : data[0].mehmonxona == 28
-          ? "FARABI 26"
+          ? "SH.SHAKIROV"
           : data[0].mehmonxona == 29
-          ? "EZGULIK 26"
+          ? "N.KAMOLOV"
           : data[0].mehmonxona == 30
-          ? "JIYDAZOR 20"
+          ? "M.USMONOV"
           : data[0].mehmonxona == 31
-          ? "PAXTAKOR 28"
+          ? "V.MILLAEV"
           : data[0].mehmonxona == 32
-          ? "SANATORIYLAR 16"
+          ? "Y.TOJIBOYEV"
           : data[0].mehmonxona == 33
-          ? "SAMO 27"
+          ? "X.MADAMINOVA"
           : data[0].mehmonxona == 34
-          ? "OQ YO`L 14"
+          ? "D.OBIDOV"
           : data[0].mehmonxona == 35
-          ? "BOBUR 1"
+          ? "X.ABDUMALIKOVA"
           : data[0].mehmonxona == 36
-          ? "TOSHTEPA 3"
+          ? "A.BOQIJONOV"
           : data[0].mehmonxona == 37
-          ? " 8-MART 21"
+          ? "SH.XAYDAROV"
           : data[0].mehmonxona == 38
-          ? "ISLOMOBOD 28"
+          ? "Q.DADABOYEV"
           : data[0].mehmonxona == 39
-          ? "CHARVADOR 6"
+          ? "I.ANVARJONOV"
           : data[0].mehmonxona == 40
-          ? "OYBEK 14"
+          ? "B.TOHIROV"
           : data[0].mehmonxona == 41
-          ? "TUKISTON 17"
+          ? "J.QODIROV"
           : data[0].mehmonxona == 42
-          ? "PESHVOZOV 18"
+          ? "I.QOSIMOV"
           : data[0].mehmonxona == 43
-          ? "CHIMYON 19"
+          ? "M.NAZIROVA"
           : data[0].mehmonxona == 44
-          ? "SULTANA DAMINOVA 1"
+          ? "B.RUSTAMOVA"
           : data[0].mehmonxona == 45
-          ? " OBODLIK 13"
+          ? "A.FARAZOV"
           : data[0].mehmonxona == 46
-          ? "NAVRUZ 16"
+          ? "R.AXMEDOV"
           : data[0].mehmonxona == 47
-          ? "VATAN RAVNAQI 24"
+          ? "X.SHAVKATOV"
           : data[0].mehmonxona == 48
-          ? "SHARSHARA 19"
+          ? "A.NURALIYEV"
           : data[0].mehmonxona == 49
-          ? "CHIMYON 14"
+          ? "R.ERGASHEVA"
           : data[0].mehmonxona == 50
-          ? "PULGON 7"
+          ? "M.VALIYEV"
           : data[0].mehmonxona == 51
-          ? "MOXLAROYIM 24"
+          ? "F.DAVRONOV"
           : data[0].mehmonxona == 52
-          ? "BERUNI 28"
+          ? "I.NUMANOV"
           : data[0].mehmonxona == 53
-          ? "YANGI TURMUSH 9"
+          ? "X.MATISAYEV"
           : data[0].mehmonxona == 54
-          ? "SANATORIYLAR 21"
+          ? "M.OBIDOV"
           : data[0].mehmonxona == 55
-          ? "CHIMYON 25"
+          ? "K.YOQUBOV"
           : data[0].mehmonxona == 56
-          ? "BUSTON 41"
+          ? "S.EMINBEKOV"
           : data[0].mehmonxona == 57
-          ? "LOLA 31"
+          ? "A.NORALIYEV"
           : data[0].mehmonxona == 58
-          ? "IFTIXOR 18"
+          ? "A.ASANOV"
           : data[0].mehmonxona == 59
-          ? "DO`STLIK 7"
-          : "PAXTAKOR 21",
+          ? "N.TILLABOYEV"
+          : "M.RUZIBOYEV",
     });
     console.log(dataa);
     document.querySelector(
@@ -410,10 +420,10 @@ function Home() {
         onClick={() => setMode(!mode)}
         className="w-8 h-8 fixed right-2 bottom-2"
       />
-      <div className={`container ${!mode ? "block" : "hidden"}`}>
+      <div className={`container ${mode ? "block" : "hidden"}`}>
         <form
           onSubmit={(e) => SendData(e)}
-          className="mt-5 flex flex-wrap gap-5 justify-between">
+          className={`mt-5 flex flex-wrap gap-5 justify-between`}>
           {" "}
           <label className="flex flex-col gap-1">
             <span className="text-xs">Гостиница</span>
@@ -605,8 +615,7 @@ function Home() {
           Tasdiqlash
         </button>
       </div>
-      <div
-        className={`container container2 ${setMode ? "rotate-container" : ""}`}>
+      <div className={`container container2`}>
         <div className="container-print mt-7 mx-auto">
           <div className="text-bg-father">
             <div className="flex flex-col gap-2 texts">
