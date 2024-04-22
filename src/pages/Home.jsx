@@ -37,14 +37,6 @@ function Home() {
   const [jinsi, setJinsi] = useState("Мужской");
   const [PassportBerilganSana, setPasportBerilganSana] = useState("");
   const [inputDate, setInputDate] = useState("");
-  function formatDate(inputDate) {
-    var parts = inputDate.split(".");
-    var year = parts[0];
-    var month = parts[1];
-    var day = parts[2];
-    var newDate = day + "." + month + "." + year;
-    return newDate;
-  }
   const [Viza, setViza] = useState(
     `ТИП: №${KPPrandom}; ${HozirgiKun < 10 ? "0" : ""}${HozirgiKun}.${
       HozirgiOy < 10 ? "0" : ""
@@ -129,7 +121,7 @@ function Home() {
     // POST so'rovi yuborish
     await postdata({
       id: generator40,
-      PersonalNO: `${generateQRCODE1} - ${generateQRCODE2} - 2024`,
+      PersonalNO: `${generateQRCODE1}-${generateQRCODE2}-2024`,
       Pinfl: "",
       FullName: `${ism} ${familiya} ${otasiIsmi}`,
       BirthDate: TugilganSana,

@@ -88,3 +88,13 @@ li.tab.active a {
   width: 50px;
   height: 50px;
 }
+.dataaTable {
+  width: 100% !important;
+}
+tr {
+  border-bottom: 0.5px solid rgb(212, 212, 212) !important;
+height: 39px !important;
+}
+.flagTD {
+  margin-top:7px;
+}

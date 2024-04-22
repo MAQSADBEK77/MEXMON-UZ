@@ -6,21 +6,23 @@ function IdentifyOrigin() {
     `https://mexmon-uz-server.onrender.com/data/${PAGEURL[PAGEURL.length - 1]}`
   );
   function formatDate(inputDate) {
-    // Gelen tarihi parçalara ayır
-    var parts = inputDate.split(".");
-
-    // Yıl, ay ve gün bilgilerini al
+    var parts = inputDate.split("-");
     var year = parts[0];
     var month = parts[1];
     var day = parts[2];
-
-    // Yeni tarih formatına göre dize oluştur
-    var newDate = day + "." + month + "." + year;
-
-    // Oluşturulan yeni tarihi döndür
+    var newDate = day + "-" + month + "-" + year;
+    return newDate;
+  }
+  function formatTochka(inputDate) {
+    var parts = inputDate.split(".");
+    var year = parts[0];
+    var month = parts[1];
+    var day = parts[2];
+    var newDate = year + "-" + month + "-" + day;
     return newDate;
   }
   console.log(dataa && dataa);
+
   return (
     <>
       <div className="row col-md-7 col-md-offset-3">
@@ -93,7 +95,7 @@ function IdentifyOrigin() {
                   <td className="label-view text-leftt">
                     <label>Д/Р</label>
                   </td>
-                  <td>{dataa != null && dataa.BirthDate}</td>
+                  <td>{dataa != null && formatTochka(dataa.BirthDate)}</td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">
