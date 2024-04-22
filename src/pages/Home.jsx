@@ -130,7 +130,7 @@ function Home() {
     await postdata({
       id: generator40,
       PersonalNO: `${generateQRCODE1} - ${generateQRCODE2} - 2024`,
-      Pinfl: "TAJIK",
+      Pinfl: "",
       FullName: `${ism} ${familiya} ${otasiIsmi}`,
       BirthDate: TugilganSana,
       County: "TAJIKISTAN",
