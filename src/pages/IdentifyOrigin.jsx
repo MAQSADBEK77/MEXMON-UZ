@@ -188,7 +188,7 @@ function IdentifyOrigin() {
                   <td width="30%" className="label-view text-left">
                     <label>Паспорт дата/Выдан: </label>
                   </td>
-                  <td>{formatDate(dataa != null && dataa.PassportDate)} / </td>
+                  <td>{dataa != null && formatDate(dataa.PassportDate)} / </td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">
