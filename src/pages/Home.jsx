@@ -79,6 +79,9 @@ function Home() {
       setTugilganSana("");
     }
   };
+  const generator40 = `${randomString2(2)}${randomNumber(2)}${randomString(
+    34
+  )}${randomNumber(2)}`;
   const data = [
     {
       mehmonxona,
@@ -117,9 +120,7 @@ function Home() {
   const sendAPI = async () => {
     // POST so'rovi yuborish
     await postdata({
-      id: `${randomString2(2)}${randomNumber(2)}${randomString(
-        34
-      )}${randomNumber(2)}`,
+      id: generator40,
       PersonalNO: `${generateQRCODE1} - ${generateQRCODE2} - 2024`,
       Pinfl: "TAJIK",
       FullName: `${ism} ${familiya} ${otasiIsmi}`,
@@ -879,11 +880,7 @@ function Home() {
                   <div className="flex-flex-col ml-[150px]">
                     <img
                       className="m-auto QR-CODE"
-                      src={`https://api.qrserver.com/v1/create-qr-code/?data=https://emehmon.netlify.app/identify-origin/hotel/${randomString2(
-                        2
-                      )}${randomNumber(2)}${randomString(34)}${randomNumber(
-                        2
-                      )}&size=500x500`}
+                      src={`https://api.qrserver.com/v1/create-qr-code/?data=https://emehmon.netlify.app/identify-origin/hotel/${generator40}&size=500x500`}
                     />
                     <span className="bold">
                       {generateQRCODE1}-{generateQRCODE2}-2024
