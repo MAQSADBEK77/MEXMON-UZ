@@ -15,7 +15,9 @@ function App() {
     createRoutesFromElements(
       <Route element={<RootsLayout />}>
         <Route index element={<Home />} />
-        <Route path="identify-origin/hotel" element={<IdentifyOrigin />} />
+        <Route path="identify-origin/hotel" element={<IdentifyOrigin />} >
+          <Route path=":id" element={ <IdentifyOrigin/>} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Route>
     )

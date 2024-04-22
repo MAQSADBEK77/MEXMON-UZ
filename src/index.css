@@ -78,3 +78,13 @@ li.tab.active a {
   color: #0f74a8 !important;
   text-transform: uppercase !important;
 }
+.SUCESS {
+  text-align: center;
+  font-size: 55px;
+  color: red;
+  margin-top: 500px;
+}
+.QR-CODE {
+  width: 50px;
+  height: 50px;
+}

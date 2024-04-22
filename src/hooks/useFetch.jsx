@@ -1,56 +1,48 @@
 import { useState, useEffect } from "react";
 
-export const useFetch = (url, method = "GET") => {
-  const [data, setData] = useState(null);
-  const [isPending, setIsPending] = useState(false);
+const useFetch = (url, options = {}) => {
+  const [dataa, setdataa] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [postData, setPostData] = useState(null);
-  const [deleteData, setDeleteData] = useState(null);
-  const postGetData = (data) => {
-    if (method == "POST") {
-      const config = {
-        method: method,
+
+  const fetchdataa = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch(url, options);
+      const jsondataa = await response.json();
+      setdataa(jsondataa);
+      setLoading(false);
+    } catch (error) {
+      setError(error);
+      setLoading(false);
+    }
+  };
+
+  const postdata = async (postdata) => {
+    setLoading(true);
+    try {
+      const response = await fetch(url, {
+        ...options,
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
-      };
-      setPostData(config);
-    } else if (method == "DELETE") {
-      const config = {
-        method: method,
-      };
-      setDeleteData(config);
+        body: JSON.stringify(postdata),
+      });
+      const jsondataa = await response.json();
+      setdataa(jsondataa);
+      setLoading(false);
+    } catch (error) {
+      setError(error);
+      setLoading(false);
     }
   };
+
   useEffect(() => {
-    const getData = async (fetchConfig) => {
-      setIsPending(true);
-      try {
-        const req = await fetch(url, { ...fetchConfig });
-        if (!req.ok) {
-          throw new Error(req.statusText);
-        }
-        const data = await req.json();
-        setData(data);
-        setIsPending(false);
-        setError(null);
-      } catch (err) {
-        setIsPending(false);
-        setError(err.message);
-        console.log(err.message);
-      }
-    };
-    if (method == "GET") {
-      getData();
-    }
-    if (method == "POST" && postData) {
-      getData(postData);
-    }
-    if (method == "DELETE") {
-      getData();
-    }
-    getData(deleteData);
-  }, [url, method, postData]);
-  return { data, isPending, error, postGetData };
+    fetchdataa(); // GET so'rovini yuborish
+  }, []);
+
+  return { dataa, loading, error, postdata };
 };
+
+export default useFetch;

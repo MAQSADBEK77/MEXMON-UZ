@@ -1,20 +1,25 @@
 import { FaInfoCircle } from "react-icons/fa";
-
+import useFetch from "../hooks/useFetch";
 function IdentifyOrigin() {
+  const PAGEURL = window.location.href.split("/");
+  const { dataa, loading, error } = useFetch(
+    `https://mexmon-uz-server.onrender.com/data/${PAGEURL[PAGEURL.length - 1]}`
+  );
+  console.log(dataa && dataa);
   return (
     <>
       <div className="row col-md-7 col-md-offset-3">
         <h4 className="top-title">
           {" "}
-          <img
-            src="https://emehmon.uz/sximo/images/logo-sximo.png"
-            width="222px"
-            style={{ verticalAlign: "bottom" }}
-          />
-          &nbsp;<b>ORIGIN DATA: </b>
-          <span style={{ color: "#0e76a8" }}>
-            63D08BA79088864551553D8123F09236B60C4B60
-          </span>
+          <a href="https://emehmon.uz/">
+            <img
+              src="https://emehmon.uz/sximo/images/logo-sximo.png"
+              width="222px"
+              style={{ verticalAlign: "bottom" }}
+            />
+          </a>
+          &nbsp;<b>ORIGIN dataa: </b>
+          <span style={{ color: "#0e76a8" }}>{dataa != null && dataa.id}</span>
         </h4>
       </div>
       <br />
@@ -24,7 +29,7 @@ function IdentifyOrigin() {
             <h5 className="panel-title">
               <a
                 style={{ fontWeight: 700, color: "#0A246A" }}
-                data-toggle="collapse"
+                dataa-toggle="collapse"
                 href="#common-info"
                 aria-expanded="true">
                 <FaInfoCircle className="fa fa-info-circle" />
@@ -38,7 +43,7 @@ function IdentifyOrigin() {
             style={{ background: "rgb(253, 253, 253)" }}
             aria-expanded="true">
             <table
-              className="dataTable row-border"
+              className="dataaTable row-border"
               style={{
                 fontFamily: '"Open sans", Courier, monospace',
                 backgroundColor: "#fff",
@@ -50,26 +55,30 @@ function IdentifyOrigin() {
                     <label>Рег. №</label>
                   </td>
                   <td>
-                    <strong>68-3574-2024 </strong>
+                    <strong>{dataa != null && dataa.PersonalNO}</strong>
                   </td>
                 </tr>
                 <tr>
                   <td className="label-dark-blue text-left">
                     <label>ПИНФЛ:</label>
                   </td>
-                  <td style={{ fontWeight: 600, letterSpacing: 2 }}>INDI</td>
+                  <td style={{ fontWeight: 600, letterSpacing: 2 }}>
+                    {dataa != null && dataa.Pinfl}
+                  </td>
                 </tr>
                 <tr>
                   <td className="label-dark-blue text-left">
                     <label>Фамилия, Имя, Отчество:</label>
                   </td>
-                  <td>BHATIA SANJEEV XXX</td>
+                  <td className="FullName">
+                    {dataa != null && dataa.FullName}
+                  </td>
                 </tr>
                 <tr>
                   <td className="label-view text-leftt">
                     <label>Д/Р</label>
                   </td>
-                  <td>08-09-1970 </td>
+                  <td>{dataa != null && dataa.BirthDate}</td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">
@@ -77,11 +86,11 @@ function IdentifyOrigin() {
                   </td>
                   <td className="flagTD">
                     <img
-                      src="https://emehmon.uz/uploads/flags/132.png"
+                      src="https://emehmon.uz/uploads/flags/170.png"
                       width="40px"
                       style={{ border: "1px solid #666" }}
                     />
-                    &nbsp; INDIA
+                    &nbsp; {dataa != null && dataa.County}
                   </td>
                 </tr>
                 <tr>
@@ -90,11 +99,11 @@ function IdentifyOrigin() {
                   </td>
                   <td className="flagTD">
                     <img
-                      src="https://emehmon.uz/uploads/flags/132.png"
+                      src="https://emehmon.uz/uploads/flags/170.png"
                       width="40px"
                       style={{ border: "1px solid #666" }}
                     />
-                    &nbsp; INDIA
+                    &nbsp; {dataa != null && dataa.County}
                   </td>
                 </tr>
                 <tr>
@@ -103,115 +112,116 @@ function IdentifyOrigin() {
                   </td>
                   <td className="flagTD">
                     <img
-                      src="https://emehmon.uz/uploads/flags/132.png"
+                      src="https://emehmon.uz/uploads/flags/170.png"
                       width="40px"
                       style={{ border: "1px solid #666" }}
                     />
-                    &nbsp; INDIA
+                    &nbsp; {dataa != null && dataa.County}
                   </td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">
                     <label>Проживает в номере:</label>
                   </td>
-                  <td>203 </td>
+                  <td>{dataa != null && dataa.RoomNumber}</td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">
                     <label>Сколько дней будет проживать:</label>
                   </td>
-                  <td>1 </td>
+                  <td>{dataa != null && dataa.HowDays}</td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">
                     <label>Пол</label>
                   </td>
-                  <td>Мужчина </td>
+                  <td>
+                    {dataa != null && dataa.Sex == "M" ? "Мужчина" : "Женщина"}
+                  </td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">
                     <label>Прибыл</label>
                   </td>
-                  <td>30-01-2024 12:59:00 </td>
+                  <td>{dataa != null && dataa.Arrived}</td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">
                     <label>Визит</label>
                   </td>
-                  <td>Трудовая деятельность </td>
+                  <td>{dataa != null && dataa.Visit} </td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">
                     <label>Тип гостя</label>
                   </td>
-                  <td>Пенсионер </td>
+                  <td>{dataa != null && dataa.GuestType} </td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">
                     <label>Убыл</label>
                   </td>
-                  <td>31-01-2024 17:41:52, Сутки проживания: 2 </td>
+                  <td>{dataa != null && dataa.Departed}</td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">
                     <label>Тип документа</label>
                   </td>
-                  <td>Паспорт Z4815868</td>
+                  <td>{dataa != null && dataa.DocumentType}</td>
                 </tr>
                 <tr>
                   <td width="30%" className="label-view text-left">
                     <label>Паспорт дата/Выдан: </label>
                   </td>
-                  <td>18-07-2019 / INDI</td>
+                  <td>{dataa != null && dataa.PassportDate}</td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">
                     <label>Виза № (Кем выдана)</label>
                   </td>
-                  <td>
-                    E 4056473 (Выдана: не указано) Срок визы: c 30-01-2024 по
-                    30-01-2024
-                  </td>
+                  <td>{dataa != null && dataa.VisaIssueBy}</td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">
                     <label>КПП и дата</label>
                   </td>
-                  <td className="text-black">№AIR ; Дата: 30-01-2024</td>
+                  <td className="text-black">
+                    {dataa != null && dataa.CheckpointAndDate}
+                  </td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">
                     <label>Оплата: </label>
                   </td>
                   <td>
-                    <b>1,00 UZS </b>
+                    <b>{dataa != null && dataa.Payment}</b>
                   </td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">
                     <label>Обновлено</label>
                   </td>
-                  <td>30-01-2024 13:01:47 </td>
+                  <td>{dataa != null && dataa.Refresh}</td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">
                     <label>Гостиница</label>
                   </td>
                   <td>
-                    <strong>EMIN / FARG'ONA</strong>
+                    <strong>{dataa != null && dataa.Hotel}</strong>
                   </td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">
                     <label>Зарегистрировал</label>
                   </td>
-                  <td>A. EMINJONOV </td>
+                  <td>{dataa != null && dataa.Admin}</td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">
                     <label>Выписал</label>
                   </td>
-                  <td>A. EMINJONOV </td>
+                  <td>{dataa != null && dataa.Admin} </td>
                 </tr>
               </tbody>
             </table>
@@ -222,7 +232,7 @@ function IdentifyOrigin() {
             <h5 className="panel-title">
               <a
                 style={{ fontWeight: 700, color: "#0A246A" }}
-                data-toggle="collapse"
+                dataa-toggle="collapse"
                 href="#common-info2"
                 className=""
                 aria-expanded="true">
@@ -232,11 +242,11 @@ function IdentifyOrigin() {
             </h5>
           </div>
           <div
-            className="panel-body collapsed col-md-12 collapse"
+            className="panel-body col-md-12 collapse"
             id="common-info2"
             style={{ background: "rgb(253, 253, 253)" }}>
             <table
-              className="dataTable row-border"
+              className="dataaTable row-border"
               cellPadding="6px"
               style={{
                 fontFamily: '"Open sans", Courier, monospace',
@@ -304,8 +314,9 @@ function IdentifyOrigin() {
             <h5 className="panel-title">
               <a
                 style={{ fontWeight: 700, color: "#0A246A" }}
-                data-toggle="collapse"
-                aria-expanded="true">
+                dataa-toggle="collapse"
+                aria-expanded="true"
+                href="#common-info3">
                 <FaInfoCircle className="fa fa-info-circle" />
                 &nbsp;Информация о детях{" "}
               </a>
@@ -327,8 +338,9 @@ function IdentifyOrigin() {
             <h5 className="panel-title">
               <a
                 style={{ fontWeight: 700, color: "#0A246A" }}
-                data-toggle="collapse"
-                aria-expanded="true">
+                dataa-toggle="collapse"
+                aria-expanded="true"
+                href="#common-info4">
                 <FaInfoCircle className="fa fa-info-circle" />
                 &nbsp;Отзывы{" "}
               </a>
@@ -338,7 +350,7 @@ function IdentifyOrigin() {
             className="panel-body collapsed col-md-12 collapse"
             id="common-info4"
             style={{ background: "rgb(253, 253, 253)" }}>
-            <table className="dataTable row-border" id="feedbacks_table">
+            <table className="dataaTable row-border" id="feedbacks_table">
               <thead>
                 <tr>
                   <td>
@@ -364,8 +376,9 @@ function IdentifyOrigin() {
             <h5 className="panel-title">
               <a
                 style={{ fontWeight: 700, color: "#0A246A" }}
-                data-toggle="collapse"
-                aria-expanded="true">
+                dataa-toggle="collapse"
+                aria-expanded="true"
+                href="#common-info5">
                 <FaInfoCircle className="fa fa-info-circle" />
                 &nbsp;События{" "}
               </a>
