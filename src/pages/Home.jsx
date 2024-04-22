@@ -140,13 +140,11 @@ function Home() {
       GuestType: "Пенсионер",
       Departed: `${HozirgiKun < 10 ? "0" : ""}${HozirgiKun + HowDays}.${
         HozirgiOy < 10 ? "0" : ""
-      }${HozirgiOy}.${HozirgiYil} ${
-        HozirgiSoat < 10 ? "0" : ""
-      }${HozirgiSoat + Math.ceil(Math.random() * 7)}:${
-        HozirgiDaqiqa <= 10 ? "0" : ""
-      }${HozirgiDaqiqa + Math.ceil(Math.random() * 5)}:${Math.ceil(
-        Math.random() * 60
-      )}, Сутки проживания: ${HowDays}`,
+      }${HozirgiOy}.${HozirgiYil} ${HozirgiSoat < 10 ? "0" : ""}${
+        HozirgiSoat + Math.ceil(Math.random() * 7)
+      }:${HozirgiDaqiqa <= 10 ? "0" : ""}${
+        HozirgiDaqiqa + Math.ceil(Math.random() * 5)
+      }:${Math.ceil(Math.random() * 60)}, Сутки проживания: ${HowDays}`,
       DocumentType: `Паспорт ${passportSeriya}`,
       PassportDate: PassportBerilganSana,
       VisaIssueBy: `(Выдана: не указано) Срок визы:`,
@@ -158,7 +156,9 @@ function Home() {
         HozirgiOy < 10 ? "0" : ""
       }${HozirgiOy}.${HozirgiYil} ${
         HozirgiSoat < 10 ? "0" : ""
-      }${HozirgiSoat}:${HozirgiDaqiqa <= 10 ? "0" : ""}${HozirgiDaqiqa + 3}`,
+      }${HozirgiSoat}:${HozirgiDaqiqa + 3 <= 10 ? "0" : ""}${
+        HozirgiDaqiqa + 3
+      }`,
       Hotel:
         data[0].mehmonxona == 1
           ? "HOTEL-LYUKS"
