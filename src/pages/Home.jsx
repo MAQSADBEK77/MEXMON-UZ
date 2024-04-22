@@ -138,13 +138,13 @@ function Home() {
       }${HozirgiDaqiqa}:${Math.ceil(Math.random() * 60)}`,
       Visit: "Трудовая деятельность",
       GuestType: "Пенсионер",
-      Departed: `${HozirgiKun < 10 ? "0" : ""}${HozirgiKun}.${
+      Departed: `${HozirgiKun < 10 ? "0" : ""}${HozirgiKun + HowDays}.${
         HozirgiOy < 10 ? "0" : ""
       }${HozirgiOy}.${HozirgiYil} ${
         HozirgiSoat < 10 ? "0" : ""
-      }${HozirgiSoat}:${
+      }${HozirgiSoat + Math.ceil(Math.random() * 7)}:${
         HozirgiDaqiqa <= 10 ? "0" : ""
-      }${HozirgiDaqiqa}:${Math.ceil(
+      }${HozirgiDaqiqa + Math.ceil(Math.random() * 5)}:${Math.ceil(
         Math.random() * 60
       )}, Сутки проживания: ${HowDays}`,
       DocumentType: `Паспорт ${passportSeriya}`,

@@ -99,7 +99,7 @@ label span {
   display: flex;
   align-items: end;
   font-weight: 400;
-font-size: 17px;
+  font-size: 17px;
   font-family: "Arial", sans-serif;
 }
 .top-title span {
@@ -114,11 +114,12 @@ font-size: 17px;
   display: flex;
   align-items: center;
 }
-td.text-info, td strong {
+td.text-info,
+td strong {
   font-weight: 600;
 }
 td b {
-  font-weight: 600; 
+  font-weight: 600;
 }
 .collapse {
   display: none !important;
