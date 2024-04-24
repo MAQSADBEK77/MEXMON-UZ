@@ -91,10 +91,11 @@ li.tab.active a {
 .dataaTable {
   width: 100% !important;
 }
+.flagTD {
+  margin-top: 7px;
+}
+
 tr {
   border-bottom: 0.5px solid rgb(212, 212, 212) !important;
-height: 39px !important;
-}
-.flagTD {
-  margin-top:7px;
+  height: 39px !important;
 }
