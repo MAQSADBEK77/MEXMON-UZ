@@ -87,7 +87,7 @@ function IdentifyOrigin() {
                   <td className="label-dark-blue text-left">
                     <label>Фамилия, Имя, Отчество:</label>
                   </td>
-                  <td> {dataa != null && dataa.FullName}</td>
+                  <td> {dataa != null && dataa.FullName.toUpperCase()}</td>
                 </tr>
                 <tr>
                   <td className="label-view text-leftt">
