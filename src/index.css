@@ -88,3 +88,9 @@ li.tab.active a {
 .regNo {
   font-weight: 600;
 }
+.uppercase {
+  text-transform: uppercase !important;
+}
+* {
+  letter-spacing: -.5px !important;
+}
