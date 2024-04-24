@@ -95,8 +95,7 @@ li.tab.active a {
   margin-top: 7px;
 }
 
-tr {
+/* tr {
   border-bottom: 0.5px solid rgb(212, 212, 212) !important;
-  -moz-border-bottom: 0.5px solid rgb(212, 212, 212) !important;
   height: 39px !important;
-}
+} */

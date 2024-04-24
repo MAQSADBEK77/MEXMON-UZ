@@ -6,16 +6,16 @@
   <link rel="shortcut icon" href="https://emehmon.uz/favicon.ico" type="image/x-icon">
   <link href="https://emehmon.uz/sximo/js/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
   <link href="https://emehmon.uz/sximo/js/plugins/jasny-bootstrap/css/jasny-bootstrap.min.css" rel="stylesheet">
-  <link href="https://emehmon .uz/sximo/fonts/awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://emehmon.uz/sximo/fonts/awesome/css/font-awesome.min.css" rel="stylesheet">
   <link
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700"
     rel="stylesheet" type="text/css" />
-  
+
   <link href="https://emehmon.uz/frontend/default/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"
     type="text/css" />
   <link href="https://emehmon.uz/frontend/default/css/core.css" rel="stylesheet" type="text/css" />
   <link href="https://emehmon.uz/frontend/default/css/default.css" rel="stylesheet" type="text/css" />
-  
+
   <link href="https://emehmon.uz/frontend/default/css/color_scheme/green.css" rel="stylesheet" type="text/css"
     id="color_scheme" />
   <link href="https://emehmon.uz/frontend/default/css/odometer-theme-default.css" rel="stylesheet">
@@ -23,9 +23,101 @@
   <script type="text/javascript" src="https://emehmon.uz/frontend/default/plugins/jquery/jquery-2.1.4.min.js"></script>
   <script type="text/javascript" src="https://emehmon.uz/frontend/default/js/default.js"></script>
   <script type="text/javascript" src="https://emehmon.uz/frontend/default/js/datatables.min.js"></script>
-    <script type="text/javascript">var plugin_path = 'https://emehmon.uz/frontend/default/plugins/';</script>
-    
+  <script type="text/javascript">var plugin_path = 'https://emehmon.uz/frontend/default/plugins/';</script>
   <title>UZBEKTOURISM | EMEHMON - CHECK QR CODE</title>
+  <style>
+    table.dataTable span.highlight {
+      background-color: #FAE5D4;
+    }
+
+    .tabs-header>li.active {
+      font-weight: 600 !important;
+    }
+
+    .btn-group-action .btn-action {
+      cursor: default
+    }
+
+    #box-header-module {
+      box-shadow: 10px 10px 10px #dddddd;
+    }
+
+    .sub-module-tab li {
+      background: #F9F9F9;
+      cursor: pointer;
+    }
+
+    .sub-module-tab li.active {
+      background: #ffffff;
+      box-shadow: 0px -5px 10px #cccccc
+    }
+
+    .nav-tabs>li.active>a,
+    .nav-tabs>li.active>a:focus,
+    .nav-tabs>li.active>a:hover {
+      border: none;
+    }
+
+    .nav-tabs>li>a {
+      border: none;
+    }
+
+    .breadcrumb {
+      margin: 0 0 0 0;
+      padding: 0 0 0 0;
+    }
+
+    .form-group>label:first-child {
+      display: block
+    }
+
+    .control-label {
+      font-family: "Roboto Condensed";
+      font-weight: 500;
+    }
+
+    .mylable {
+      color: #000;
+      font-weight: 500;
+      font-family: 'Roboto Condensed'
+    }
+
+    table.dataTable.dt-checkboxes-select tbody tr,
+    table.dataTable thead th.dt-checkboxes-select-all,
+    table.dataTable tbody td.dt-checkboxes-cell {
+      cursor: pointer;
+    }
+
+    table.dataTable thead th.dt-checkboxes-select-all,
+    table.dataTable tbody td.dt-checkboxes-cell {
+      text-align: center;
+    }
+
+    div.dataTables_wrapper span.select-info,
+    div.dataTables_wrapper span.select-item {
+      margin-left: 0.5em;
+    }
+
+    @media screen and (max-width: 640px) {
+
+      div.dataTables_wrapper span.select-info,
+      div.dataTables_wrapper span.select-item {
+        margin-left: 0;
+        display: block;
+      }
+    }
+
+    #table-detail tr td:first-child {
+      font-weight: bold;
+      width: 25%;
+    }
+
+    li.tab.active a {
+      font-weight: 500;
+      color: #0f74a8 !important;
+      text-transform: uppercase !important
+    }
+  </style>
 </head>
 
 <body>
