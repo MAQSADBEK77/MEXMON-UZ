@@ -70,7 +70,9 @@ function IdentifyOrigin() {
                     <label>Рег. №</label>
                   </td>
                   <td>
-                    <strong style={{ fontWeight: 600, letterSpacing: 2 }}>
+                    <strong
+                      className="chiziqchaBor"
+                      style={{ fontWeight: 600, letterSpacing: 2 }}>
                       {dataa != null && dataa.PersonalNO}
                     </strong>
                   </td>
@@ -91,7 +93,7 @@ function IdentifyOrigin() {
                 </tr>
                 <tr>
                   <td className="label-view text-leftt">
-                    <label>Д/Р</label>
+                    <label className="chiziqchaBor">Д/Р</label>
                   </td>
                   <td>{dataa != null && formatTochka(dataa.BirthDate)}</td>
                 </tr>
@@ -188,7 +190,9 @@ function IdentifyOrigin() {
                   <td width="30%" className="label-view text-left">
                     <label>Паспорт дата/Выдан: </label>
                   </td>
-                  <td>{dataa != null && formatDate(dataa.PassportDate)} / </td>
+                  <td className="chiziqchaBor">
+                    {dataa != null && formatDate(dataa.PassportDate)} /{" "}
+                  </td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">

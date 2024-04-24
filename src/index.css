@@ -88,6 +88,6 @@ li.tab.active a {
 .uppercase {
   text-transform: uppercase !important;
 }
-* {
-  letter-spacing: -.5px !important;
+.chiziqchaBor {
+  letter-spacing: -0.5px !important;
 }
