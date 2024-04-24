@@ -78,24 +78,6 @@ li.tab.active a {
   color: #0f74a8 !important;
   text-transform: uppercase !important;
 }
-.SUCESS {
-  text-align: center;
-  font-size: 55px;
-  color: red;
-  margin-top: 300px;
+.collapse {
+  display: none;
 }
-.QR-CODE {
-  width: 50px;
-  height: 50px;
-}
-.dataaTable {
-  width: 100% !important;
-}
-.flagTD {
-  margin-top: 7px;
-}
-
-/* tr {
-  border-bottom: 0.5px solid rgb(212, 212, 212) !important;
-  height: 39px !important;
-} */

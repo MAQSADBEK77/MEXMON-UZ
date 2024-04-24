@@ -28,13 +28,11 @@ function IdentifyOrigin() {
       <div className="row col-md-7 col-md-offset-3">
         <h4 className="top-title">
           {" "}
-          <a href="https://emehmon.uz/">
-            <img
-              src="https://emehmon.uz/sximo/images/logo-sximo.png"
-              width="222px"
-              style={{ verticalAlign: "bottom" }}
-            />
-          </a>
+          <img
+            src="https://emehmon.uz/sximo/images/logo-sximo.png"
+            width="222px"
+            style={{ verticalAlign: "bottom" }}
+          />
           &nbsp;<b>ORIGIN DATA: </b>
           <span style={{ color: "#0e76a8" }}>{dataa != null && dataa.id}</span>
         </h4>
@@ -46,7 +44,7 @@ function IdentifyOrigin() {
             <h5 className="panel-title">
               <a
                 style={{ fontWeight: 700, color: "#0A246A" }}
-                dataa-toggle="collapse"
+                data-toggle="collapse"
                 href="#common-info"
                 aria-expanded="true">
                 <FaInfoCircle className="fa fa-info-circle" />
@@ -60,7 +58,7 @@ function IdentifyOrigin() {
             style={{ background: "rgb(253, 253, 253)" }}
             aria-expanded="true">
             <table
-              className="dataaTable row-border"
+              className="dataTable row-border"
               style={{
                 fontFamily: '"Open sans", Courier, monospace',
                 backgroundColor: "#fff",
@@ -87,9 +85,7 @@ function IdentifyOrigin() {
                   <td className="label-dark-blue text-left">
                     <label>Фамилия, Имя, Отчество:</label>
                   </td>
-                  <td className="FullName">
-                    {dataa != null && dataa.FullName}
-                  </td>
+                  <td> {dataa != null && dataa.FullName}</td>
                 </tr>
                 <tr>
                   <td className="label-view text-leftt">
@@ -116,7 +112,7 @@ function IdentifyOrigin() {
                   </td>
                   <td className="flagTD">
                     <img
-                      src="https://emehmon.uz/uploads/flags/170.png"
+                      src="https://emehmon.uz/uploads/flags/132.png"
                       width="40px"
                       style={{ border: "1px solid #666" }}
                     />
@@ -129,7 +125,7 @@ function IdentifyOrigin() {
                   </td>
                   <td className="flagTD">
                     <img
-                      src="https://emehmon.uz/uploads/flags/170.png"
+                      src="https://emehmon.uz/uploads/flags/132.png"
                       width="40px"
                       style={{ border: "1px solid #666" }}
                     />
@@ -152,9 +148,7 @@ function IdentifyOrigin() {
                   <td className="label-view text-left">
                     <label>Пол</label>
                   </td>
-                  <td>
-                    {dataa != null && dataa.Sex == "M" ? "Мужчина" : "Женщина"}
-                  </td>
+                  {dataa != null && dataa.Sex == "M" ? "Мужчина" : "Женщина"}
                 </tr>
                 <tr>
                   <td className="label-view text-left">
@@ -234,12 +228,11 @@ function IdentifyOrigin() {
                   </td>
                   <td>{dataa != null && dataa.Admin}</td>
                 </tr>
-                <tr>
-                  <td className="label-view text-left">
-                    <label>Выписал</label>
-                  </td>
-                  <td>{dataa != null && dataa.Admin} </td>
-                </tr>
+                <tr />
+                <td className="label-view text-left">
+                  <label>Выписал</label>
+                </td>
+                <td>{dataa != null && dataa.Admin} </td>
               </tbody>
             </table>
           </div>
@@ -249,9 +242,8 @@ function IdentifyOrigin() {
             <h5 className="panel-title">
               <a
                 style={{ fontWeight: 700, color: "#0A246A" }}
-                dataa-toggle="collapse"
+                data-toggle="collapse"
                 href="#common-info2"
-                className=""
                 aria-expanded="true">
                 <FaInfoCircle className="fa fa-info-circle" />
                 &nbsp;Информация о турсборе{" "}
@@ -259,11 +251,11 @@ function IdentifyOrigin() {
             </h5>
           </div>
           <div
-            className="panel-body col-md-12 collapse"
+            className="panel-body collapsed col-md-12 collapse"
             id="common-info2"
             style={{ background: "rgb(253, 253, 253)" }}>
             <table
-              className="dataaTable row-border"
+              className="dataTable row-border"
               cellPadding="6px"
               style={{
                 fontFamily: '"Open sans", Courier, monospace',
@@ -331,9 +323,9 @@ function IdentifyOrigin() {
             <h5 className="panel-title">
               <a
                 style={{ fontWeight: 700, color: "#0A246A" }}
-                dataa-toggle="collapse"
-                aria-expanded="true"
-                href="#common-info3">
+                data-toggle="collapse"
+                href="#common-info3"
+                aria-expanded="true">
                 <FaInfoCircle className="fa fa-info-circle" />
                 &nbsp;Информация о детях{" "}
               </a>
@@ -355,7 +347,7 @@ function IdentifyOrigin() {
             <h5 className="panel-title">
               <a
                 style={{ fontWeight: 700, color: "#0A246A" }}
-                dataa-toggle="collapse"
+                data-toggle="collapse"
                 aria-expanded="true"
                 href="#common-info4">
                 <FaInfoCircle className="fa fa-info-circle" />
@@ -367,7 +359,7 @@ function IdentifyOrigin() {
             className="panel-body collapsed col-md-12 collapse"
             id="common-info4"
             style={{ background: "rgb(253, 253, 253)" }}>
-            <table className="dataaTable row-border" id="feedbacks_table">
+            <table className="dataTable row-border" id="feedbacks_table">
               <thead>
                 <tr>
                   <td>
@@ -393,7 +385,7 @@ function IdentifyOrigin() {
             <h5 className="panel-title">
               <a
                 style={{ fontWeight: 700, color: "#0A246A" }}
-                dataa-toggle="collapse"
+                data-toggle="collapse"
                 aria-expanded="true"
                 href="#common-info5">
                 <FaInfoCircle className="fa fa-info-circle" />
