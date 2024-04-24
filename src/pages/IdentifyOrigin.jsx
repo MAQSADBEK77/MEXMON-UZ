@@ -70,7 +70,9 @@ function IdentifyOrigin() {
                     <label>Рег. №</label>
                   </td>
                   <td>
-                    <strong className="regNo">{dataa != null && dataa.PersonalNO}</strong>
+                    <strong style={{ fontWeight: 600, letterSpacing: 2 }}>
+                      {dataa != null && dataa.PersonalNO}
+                    </strong>
                   </td>
                 </tr>
                 <tr>
@@ -112,7 +114,7 @@ function IdentifyOrigin() {
                   </td>
                   <td className="flagTD">
                     <img
-                      src="https://emehmon.uz/uploads/flags/132.png"
+                      src="https://emehmon.uz/uploads/flags/170.png"
                       width="40px"
                       style={{ border: "1px solid #666" }}
                     />
@@ -125,7 +127,7 @@ function IdentifyOrigin() {
                   </td>
                   <td className="flagTD">
                     <img
-                      src="https://emehmon.uz/uploads/flags/132.png"
+                      src="https://emehmon.uz/uploads/flags/170.png"
                       width="40px"
                       style={{ border: "1px solid #666" }}
                     />
@@ -148,7 +150,9 @@ function IdentifyOrigin() {
                   <td className="label-view text-left">
                     <label>Пол</label>
                   </td>
-                  {dataa != null && dataa.Sex == "M" ? "Мужчина" : "Женщина"}
+                  <td>
+                    {dataa != null && dataa.Sex == "M" ? "Мужчина" : "Женщина"}
+                  </td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">
@@ -228,11 +232,12 @@ function IdentifyOrigin() {
                   </td>
                   <td>{dataa != null && dataa.Admin}</td>
                 </tr>
-                <tr />
-                <td className="label-view text-left">
-                  <label>Выписал</label>
-                </td>
-                <td>{dataa != null && dataa.Admin} </td>
+                <tr>
+                  <td className="label-view text-left">
+                    <label>Выписал</label>
+                  </td>
+                  <td>{dataa != null && dataa.Admin} </td>
+                </tr>
               </tbody>
             </table>
           </div>
