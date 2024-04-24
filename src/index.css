@@ -81,3 +81,10 @@ li.tab.active a {
 .collapse {
   display: none;
 }
+.QR-CODE {
+  width: 40px;
+  height: 40px;
+}
+.regNo {
+  font-weight: 600;
+}

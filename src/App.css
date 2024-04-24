@@ -8,7 +8,7 @@ body {
   margin: 0 auto;
   padding: 0 20px;
 }
-.container2 {
+/* .container2 {
   width: 1000px;
   height: 1170px;
   background: url(./images/background1.png);
@@ -23,7 +23,7 @@ body {
   height: 520px;
   padding-top: 30px;
   padding-left: 25px;
-}
+} */
 .container-print {
   margin: 0 15px;
   position: absolute;

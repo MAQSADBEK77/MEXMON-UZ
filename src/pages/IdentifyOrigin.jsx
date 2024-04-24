@@ -70,7 +70,7 @@ function IdentifyOrigin() {
                     <label>Рег. №</label>
                   </td>
                   <td>
-                    <strong>{dataa != null && dataa.PersonalNO}</strong>
+                    <strong className="regNo">{dataa != null && dataa.PersonalNO}</strong>
                   </td>
                 </tr>
                 <tr>
