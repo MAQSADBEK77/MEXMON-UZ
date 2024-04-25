@@ -178,7 +178,7 @@ function IdentifyOrigin() {
                   <td className="label-view text-left">
                     <label>Убыл</label>
                   </td>
-                  <td>{dataa != null && formatDate(dataa.Departed)}</td>
+                  <td>{dataa != null && dataa.Departed}</td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">
