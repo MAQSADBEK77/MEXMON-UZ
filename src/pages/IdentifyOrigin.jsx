@@ -2,7 +2,7 @@ import { FaInfoCircle } from "react-icons/fa";
 import useFetch from "../hooks/useFetch";
 function IdentifyOrigin() {
   const PAGEURL = window.location.href.split("/");
-  const { dataa, loading, error } = useFetch(
+  const { dataa } = useFetch(
     `https://mexmon-uz-server.onrender.com/data/${PAGEURL[PAGEURL.length - 1]}`
   );
   function formatDate(inputDate) {
@@ -72,7 +72,7 @@ function IdentifyOrigin() {
                   <td>
                     <strong
                       className="chiziqchaBor"
-                      style={{ fontWeight: 600, letterSpacing: 2 }}>
+                      style={{ fontWeight: 600 }}>
                       {dataa != null && dataa.PersonalNO}
                     </strong>
                   </td>
@@ -160,7 +160,7 @@ function IdentifyOrigin() {
                   <td className="label-view text-left">
                     <label>Прибыл</label>
                   </td>
-                  <td>{dataa != null && dataa.Arrived}</td>
+                  <td>{dataa != null && formatDate(dataa.Arrived)}</td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">
@@ -178,7 +178,7 @@ function IdentifyOrigin() {
                   <td className="label-view text-left">
                     <label>Убыл</label>
                   </td>
-                  <td>{dataa != null && dataa.Departed}</td>
+                  <td>{dataa != null && formatDate(dataa.Departed)}</td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">
@@ -213,21 +213,25 @@ function IdentifyOrigin() {
                     <label>Оплата: </label>
                   </td>
                   <td>
-                    <b>{dataa != null && dataa.Payment}</b>
+                    <b style={{ fontWeight: 600 }}>
+                      {dataa != null && dataa.Payment}
+                    </b>
                   </td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">
                     <label>Обновлено</label>
                   </td>
-                  <td>{dataa != null && dataa.Refresh}</td>
+                  <td>{dataa != null && formatTochka(dataa.Refresh)}</td>
                 </tr>
                 <tr>
                   <td className="label-view text-left">
                     <label>Гостиница</label>
                   </td>
                   <td>
-                    <strong>{dataa != null && dataa.Hotel}</strong>
+                    <strong style={{ fontWeight: 600 }}>
+                      {dataa != null && dataa.Hotel}
+                    </strong>
                   </td>
                 </tr>
                 <tr>
