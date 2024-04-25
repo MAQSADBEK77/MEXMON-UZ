@@ -280,7 +280,7 @@ function IdentifyOrigin() {
                     <label> СУТКИ ПРОЖИВАНИЯ: </label>
                   </td>
                   <td className="text-info font-bold">
-                    <b>2</b>
+                    <b>{dataa != null && dataa.HowDays}</b>
                   </td>
                 </tr>
                 <tr>

@@ -11,6 +11,9 @@ function Home() {
   const generate24 = Math.floor(Math.random() * 2400);
   const KPPrandom =
     Math.floor(Math.random() * (9999999 - 1101090 + 1)) + 1101090;
+  const GENERATE_TIME = Math.ceil(Math.random() * 5);
+  const GENERATE_TIME_30 = Math.ceil(Math.random() * 30);
+  const GENERATE_TIME_60 = Math.ceil(Math.random() * 60);
   // GENERATE CODE
   // TIME CODE
   const HozirgiVaqt = new Date();
@@ -132,25 +135,29 @@ function Home() {
       Arrived: `${HozirgiKun < 10 ? "0" : ""}${HozirgiKun}-${
         HozirgiOy < 10 ? "0" : ""
       }${HozirgiOy}-${HozirgiYil} ${
-        HozirgiSoat - Math.ceil(Math.random() * 12) < 10 ? "0" : ""
-      }${HozirgiSoat}:${
-        HozirgiDaqiqa <= 10 ? "0" : ""
-      }${HozirgiDaqiqa}:${Math.ceil(Math.random() * 60)}`,
+        HozirgiSoat - GENERATE_TIME < 10 ? "0" : ""
+      }${HozirgiSoat - GENERATE_TIME}:${
+        GENERATE_TIME_30 < 10 ? "0" : ""
+      }${GENERATE_TIME_30}:${
+        GENERATE_TIME_60 < 10 ? "0" + GENERATE_TIME_60 : +GENERATE_TIME_60
+      }`,
       Visit: "Трудовая деятельность",
       GuestType: "Пенсионер",
       Departed: `${HozirgiKun < 10 ? "0" : ""}${HozirgiKun + HowDays}-${
         HozirgiOy < 10 ? "0" : ""
-      }${HozirgiOy}-${HozirgiYil} ${HozirgiSoat < 10 ? "0" : ""}${
-        HozirgiSoat + Math.ceil(Math.random() * 7)
-      }:${HozirgiDaqiqa <= 10 ? "0" : ""}${
-        HozirgiDaqiqa + Math.ceil(Math.random() * 5)
-      }:${Math.ceil(Math.random() * 60)}, Сутки проживания: ${HowDays}`,
+      }${HozirgiOy}-${HozirgiYil} ${
+        HozirgiSoat - GENERATE_TIME < 10 ? "0" : ""
+      }${HozirgiSoat - GENERATE_TIME}:${
+        GENERATE_TIME_30 < 10 ? "0" : ""
+      }${GENERATE_TIME_30}:${
+        GENERATE_TIME_60 < 10 ? "0" + GENERATE_TIME_60 : GENERATE_TIME_60
+      }, Сутки проживания: ${HowDays}`,
       DocumentType: `Паспорт ${passportSeriya}`,
       PassportDate: PassportBerilganSana,
       VisaIssueBy: `(Выдана: не указано) Срок визы:`,
       CheckpointAndDate: `№31 ; Дата: ${
         HozirgiKun < 10 ? "0" : ""
-      }${HozirgiKun}.${HozirgiOy < 10 ? "0" : ""}${HozirgiOy}.${HozirgiYil}`,
+      }${HozirgiKun}-${HozirgiOy < 10 ? "0" : ""}${HozirgiOy}-${HozirgiYil}`,
       Payment: "1,00 UZS",
       Refresh: `${HozirgiKun < 10 ? "0" : ""}${HozirgiKun}.${
         HozirgiOy < 10 ? "0" : ""
@@ -158,7 +165,7 @@ function Home() {
         HozirgiSoat < 10 ? "0" : ""
       }${HozirgiSoat}:${HozirgiDaqiqa + 3 <= 10 ? "0" : ""}${
         HozirgiDaqiqa + 3
-      }`,
+      }:${GENERATE_TIME_60 < 10 ? "0" + GENERATE_TIME_60 : GENERATE_TIME_60}`,
       Hotel:
         data[0].mehmonxona == 1
           ? "HOTEL-LYUKS"
