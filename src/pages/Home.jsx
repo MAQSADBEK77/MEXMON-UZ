@@ -129,18 +129,18 @@ function Home() {
       RoomNumber: COMnumber,
       HowDays: HowDays,
       Sex: jinsi,
-      Arrived: `${HozirgiKun < 10 ? "0" : ""}${HozirgiKun}.${
+      Arrived: `${HozirgiKun < 10 ? "0" : ""}${HozirgiKun}-${
         HozirgiOy < 10 ? "0" : ""
-      }${HozirgiOy}.${HozirgiYil} ${
+      }${HozirgiOy}-${HozirgiYil} ${
         HozirgiSoat - Math.ceil(Math.random() * 12) < 10 ? "0" : ""
       }${HozirgiSoat}:${
         HozirgiDaqiqa <= 10 ? "0" : ""
       }${HozirgiDaqiqa}:${Math.ceil(Math.random() * 60)}`,
       Visit: "Трудовая деятельность",
       GuestType: "Пенсионер",
-      Departed: `${HozirgiKun < 10 ? "0" : ""}${HozirgiKun + HowDays}.${
+      Departed: `${HozirgiKun < 10 ? "0" : ""}${HozirgiKun + HowDays}-${
         HozirgiOy < 10 ? "0" : ""
-      }${HozirgiOy}.${HozirgiYil} ${HozirgiSoat < 10 ? "0" : ""}${
+      }${HozirgiOy}-${HozirgiYil} ${HozirgiSoat < 10 ? "0" : ""}${
         HozirgiSoat + Math.ceil(Math.random() * 7)
       }:${HozirgiDaqiqa <= 10 ? "0" : ""}${
         HozirgiDaqiqa + Math.ceil(Math.random() * 5)
@@ -1147,4 +1147,3 @@ function Home() {
   );
 }
 export default Home;
-  
