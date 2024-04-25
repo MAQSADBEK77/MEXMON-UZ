@@ -320,7 +320,7 @@ function IdentifyOrigin() {
                     <label>ИТОГОВАЯ СУММА ТУРСБОРА: </label>
                   </td>
                   <td className="text-info font-bold">
-                    <b>{dataa != null && dataa.HowDays * 34000}</b>
+                    <b>{dataa != null && dataa.HowDays * 34 + " 000, 00"}</b>
                   </td>
                 </tr>
                 <tr>
