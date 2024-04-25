@@ -304,7 +304,9 @@ function IdentifyOrigin() {
                     <label>НАЧИСЛЕНИЕ СУММЫ ТУРСБОРА: </label>
                   </td>
                   <td className="text-info font-bold">
-                    {dataa != null && dataa.HowDays * 34 + " 000, 00"}{" "}
+                    {dataa != null && dataa.HowDays * 34 < 100
+                      ? dataa.HowDays * 34 + " 000, 00"
+                      : dataa.HowDays * 34 + ",000.00"}{" "}
                   </td>
                 </tr>
                 <tr>
@@ -320,7 +322,11 @@ function IdentifyOrigin() {
                     <label>ИТОГОВАЯ СУММА ТУРСБОРА: </label>
                   </td>
                   <td className="text-info font-bold">
-                    <b>{dataa != null && dataa.HowDays * 34 + " 000, 00"}</b>
+                    <b>
+                      {dataa != null && dataa.HowDays * 34 < 100
+                        ? dataa.HowDays * 34 + " 000, 00"
+                        : dataa.HowDays * 34 + ",000.00"}{" "}
+                    </b>
                   </td>
                 </tr>
                 <tr>
